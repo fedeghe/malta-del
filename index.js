@@ -10,7 +10,7 @@ function malta_del(o, options) {
 		fs.unlink(dir + '/' +  options.name, function (err) {
 
             if (err == null) {
-                msg = 'plugin ' + path.basename(__filename) + ' deleted ' + dir + '/' +  options.name;
+                msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' deleted ' + dir + '/' +  options.name;
             } else {
                 console.log('[ERROR] del says:');
                 console.dir(err);
