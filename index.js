@@ -4,19 +4,19 @@ var path = require('path'),
 function malta_del(o, options) {
 	var self = this,
 		start = new Date(),
-		msg;
+		msg,
+		pluginName = path.basename(path.dirname(__filename)),
+		doErr = function (e) {
+			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
+			console.dir(e);
+			self.stop();
+		};
 	return function (solve, reject){
 		var dir = path.dirname(o.name);
 		fs.unlink(dir + '/' +  options.name, function (err) {
-
-            if (err == null) {
-                msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' deleted ' + dir + '/' +  options.name;
-            } else {
-                console.log('[ERROR] del says:');
-                console.dir(err);
-                self.stop();
-            }
-  			solve(o);
+            err && doErr(err);
+			msg = 'plugin ' + pluginName.white() + ' deleted ' + dir + '/' +  options.name;
+            solve(o);
   			self.notifyAndUnlock(start, msg);
 		});
 	};
