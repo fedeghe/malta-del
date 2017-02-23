@@ -1,6 +1,6 @@
 {
   "name": "malta-del",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Malta plugin to deleta a file",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,7 @@
     "malta delete a file plugin"
   ],
   "author": "Federico Ghedina <federico.ghedina@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fedeghe/malta-del/issues"
   },
