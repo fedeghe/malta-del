@@ -1,3 +1,10 @@
+---
+[![npm version](https://badge.fury.io/js/malta-del.svg)](http://badge.fury.io/js/malta-del)
+[![Dependencies](https://david-dm.org/fedeghe/malta-del.svg)](https://david-dm.org/fedeghe/malta-del)
+[![npm downloads](https://img.shields.io/npm/dt/malta-del.svg)](https://npmjs.org/package/malta-del)
+[![npm downloads](https://img.shields.io/npm/dm/malta-del.svg)](https://npmjs.org/package/malta-del)  
+---  
+
 This plugin can be used on all files and simply deletes the file named as the `name` parameter passed (relative to outfolder) 
 
 Options : 
