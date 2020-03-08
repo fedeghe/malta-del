@@ -1,15 +1,16 @@
-var path = require('path'),
+const path = require('path'),
     fs = require('fs');
 
 function malta_del(o, options) {
-    var self = this,
+    const self = this,
         start = new Date(),
-        msg,
         pluginName = path.basename(path.dirname(__filename));
+        
+    let msg;
 
-    return function (solve, reject) {
-        var dir = path.dirname(o.name);
-        fs.unlink(dir + '/' + options.name, function (err) {
+    return (solve, reject) => {
+        const dir = path.dirname(o.name);
+        fs.unlink(dir + '/' + options.name, err => {
             err && self.doErr(err, o, pluginName);
             msg = 'plugin ' + pluginName.white() + ' deleted ' + dir + '/' + options.name;
             err
@@ -19,5 +20,4 @@ function malta_del(o, options) {
         });
     };
 }
-// malta_del.ext = ['*'];
 module.exports = malta_del;
